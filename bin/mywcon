@@ -1,0 +1,15 @@
+#
+
+## at first let's get the capitalized host nick name
+
+# nickname
+nick=`hostname | sed 's/\..*//'`
+head=`echo $nick | sed 's/^\(.\).*/\1/'`
+tail=`echo $nick | sed 's/^.\(.*\)/\1/'`
+Head=`echo $head | tr 'a-z' 'A-Z'`
+Nick=`echo -n ${Head}${tail}`
+unset nick head tail Head
+
+xterm -fn 8x16 -fb 8x16bold -fg black -bg white \
+ -ls -sl 700 -sb -T $Nick -n $Nick -g 96x32 &
+

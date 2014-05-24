@@ -1,0 +1,18 @@
+#
+# This is a hosts file with a format inverse to that of /etc/hosts
+#
+#	<hostname>	<IP address>
+#
+# This file provides a per-user customization for name resolution
+# See hostname(7) manual for more details
+# To use this file, set and export HOSTALIASES environment variable 
+# to the location of this file
+#
+
+# Our home computers in Canada
+isi		192.168.1.135
+ariana		192.168.1.143
+philip		192.168.1.145
+miri		192.168.1.136
+ani		192.168.1.144
+

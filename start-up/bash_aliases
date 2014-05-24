@@ -1,0 +1,32 @@
+alias a='alias'
+alias c='cat'
+alias e='egrep'
+alias ew='xemacs -nw'
+alias f='file'
+alias fp='fgrep -n'
+alias g='grep'
+alias h='head -1'
+alias j='jobs -l'
+alias kg='kghostview'
+#alias l='ls -aFC'
+#if [ x`uname` != xSunOS ]; then
+alias ls='ls --color=tty'
+#fi
+alias m='less'
+alias op='openwin'
+alias op16='openwin -- -bpp 16'
+alias op24='openwin -- -bpp 24'
+alias q='quota -v'
+alias rl='rlogin'
+alias rt='popd'
+alias sus='kill -STOP $$'
+alias s='slogin -Y'
+alias t='tail -1'
+alias tn='telnet'
+alias v='vi'
+alias w='wc -l'
+
+# cool? -- we'll check it out
+#alias ..='cd ..'  ../..='cd ../..' ../../='cd ../..'   -='cd -'
+
+

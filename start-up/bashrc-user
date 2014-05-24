@@ -1,0 +1,20 @@
+#
+# Add the below section to the bottom of ~/.bashrc
+# 
+
+##
+##
+# User specific environment and startup programs
+if [ "x`whoami`" = xroot ]; then
+    a=`echo -e '\033[1m\033[31m'`
+    b=`echo -e '\033[0m'`
+    PS1='\['$a'\]<\h \w>#\['$b'\] '
+else
+    a=`echo -e '\033[1m\033[35m'`
+    b=`echo -e '\033[0m'`
+    PS1='\['$a'\]<\h \w>\['$b'\] '
+fi
+unset a b
+
+f=fate-2.phys.uvic.ca
+

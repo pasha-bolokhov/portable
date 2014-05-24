@@ -1,0 +1,23 @@
+#
+f=fate-2.phys.uvic.ca
+
+a=`pwd`
+if echo "$a" | grep -q -v "$HOME" -; then
+   echo "Should be synchronizing somewhere within HOME directory" 1>&2
+   exit 3
+fi
+
+if [ "$a" == "$HOME" ]; then
+  echo "Not good to synchronize directly with HOME" 1>&2
+  exit 2
+fi
+b=`echo "$a" | sed "s@^${HOME}@@" | sed 's@^/@@' | sed 's@/$@@'`
+b=${b}/
+
+echo -e "Synchronizing from Fates with directory \033[1m${b}\033[0m"
+
+echo "rsync -av -e 'ssh -p 2200' $@ ${f}:${b} ./"
+
+rsync -av -e 'ssh -p 2200' $@ ${f}:${b} ./
+
+
