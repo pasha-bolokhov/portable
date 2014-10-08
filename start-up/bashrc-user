@@ -6,15 +6,10 @@
 ##
 # User specific environment and startup programs
 if [ "x`whoami`" = xroot ]; then
-    a=`echo -e '\033[1m\033[31m'`
-    b=`echo -e '\033[0m'`
-    PS1='\['$a'\]<\h \w>#\['$b'\] '
+    PS1='\[\e[1m\e[31m\]<\h \w>#\[\e[0m\] '
 else
-    a=`echo -e '\033[1m\033[35m'`
-    b=`echo -e '\033[0m'`
-    PS1='\['$a'\]<\h \w>\['$b'\] '
+    PS1='\[\e[1m\e[35m\]<\h \w>\[\e[0m\] '
 fi
-unset a b
 
 f=fate-2.phys.uvic.ca
 b=cst401@deepblue.cs.camosun.bc.ca
