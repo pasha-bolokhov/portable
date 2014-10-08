@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+slogin cst401@deepblue.cs.camosun.bc.ca
+
