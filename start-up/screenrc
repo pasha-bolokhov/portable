@@ -1,0 +1,7 @@
+#
+# Configuration file by Pasha Bolokhov <pasha.bolokhov@gmail.com>
+#
+
+# Switch C-a command key to C-\
+escape ^\a
+

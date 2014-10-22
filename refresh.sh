@@ -46,3 +46,7 @@ fi
 cp -a ./start-up/bash_aliases ~/.bash_aliases
 echo "Don't forget to update ~/.bashrc with start-up/bashrc-user if needed"
 
+# Configuration file for GNU screen
+cp -a ./start-up/screenrc ~/.screenrc
+
+
