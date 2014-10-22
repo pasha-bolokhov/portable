@@ -49,4 +49,6 @@ echo "Don't forget to update ~/.bashrc with start-up/bashrc-user if needed"
 # Configuration file for GNU screen
 cp -a ./start-up/screenrc ~/.screenrc
 
+# Configuration file for tmux
+cp -a ./start-up/tmux.conf ~/.tmux.conf
 
