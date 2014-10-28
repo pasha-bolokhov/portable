@@ -1,4 +1,23 @@
-#
+#!/bin/bash
 
-rm -i *~
+TEMP=`getopt -o R -- "$@"`
+
+if [ $? != 0 ]; then exit 1; fi
+
+eval set -- "$TEMP"
+
+recursive=0
+while :; do
+	case $1 in
+		-R) recursive=1; shift;;
+		--) shift; break;;
+		*) echo "Internal error" 1>&2; exit 1;
+	esac
+done
+
+if [ $recursive == 1 ]; then
+	find . -name '*~' -exec rm -i '{}' +
+else
+	rm -i *~
+fi
 
