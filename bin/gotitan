@@ -1,0 +1,5 @@
+#
+host=titan.phys.uvic.ca
+
+slogin -p 2200 -Y bolokhov@${host}
+
