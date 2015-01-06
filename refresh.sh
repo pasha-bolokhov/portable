@@ -45,7 +45,7 @@ fi
 # Copy start-up files
 cp -a ./start-up/bash_aliases ~/.bash_aliases
 if ! grep -q '^### MARKER-BEGIN-PORTABLE' ~/.bashrc || ! grep -q '^### MARKER-END-PORTABLE' ~/.bashrc; then
-    echo "Update ~/.bashrc with start-up/bashrc-user if needed manually"
+    echo "Update ~/.bashrc with start-up/bashrc-user if needed manually" 1>&2
 else
     ed -s ~/.bashrc <<-EOF
 	/^### MARKER-BEGIN-PORTABLE/,/^### MARKER-END-PORTABLE/ d
