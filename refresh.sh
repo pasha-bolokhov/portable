@@ -44,7 +44,16 @@ fi
 
 # Copy start-up files
 cp -a ./start-up/bash_aliases ~/.bash_aliases
-echo "Don't forget to update ~/.bashrc with start-up/bashrc-user if needed"
+if ! grep -q '^### MARKER-BEGIN-PORTABLE' ~/.bashrc || ! grep -q '^### MARKER-END-PORTABLE' ~/.bashrc; then
+    echo "Update ~/.bashrc with start-up/bashrc-user if needed manually"
+else
+    ed -s ~/.bashrc <<-EOF
+	/^### MARKER-BEGIN-PORTABLE/,/^### MARKER-END-PORTABLE/ d
+	.-1 r start-up/bashrc-user
+	w
+	Q
+	EOF
+fi
 
 # Configuration file for GNU screen
 cp -a ./start-up/screenrc ~/.screenrc
