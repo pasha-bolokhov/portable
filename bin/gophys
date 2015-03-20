@@ -1,6 +1,7 @@
 #
 user=pabolokh
 host=phys.pdmi.ras.ru
+options=
 
-slogin -Y ${user}@${host}
+slogin ${options} ${user}@${host}
 
