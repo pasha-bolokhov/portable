@@ -1,5 +1,5 @@
 #
-f=fate-2.phys.uvic.ca
+f=titan.phys.uvic.ca
 
 a=`pwd`
 if echo "$a" | grep -q -v "$HOME" -; then
