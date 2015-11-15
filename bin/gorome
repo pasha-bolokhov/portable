@@ -1,0 +1,7 @@
+#
+user=pasha
+host=rome.belkasoft.com
+options=
+
+slogin ${options} ${user}@${host}
+
