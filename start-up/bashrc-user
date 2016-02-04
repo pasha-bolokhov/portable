@@ -11,6 +11,6 @@ else
     PS1='\[\e[1m\e[35m\]<\h \w>\[\e[0m\] '
 fi
 
-f=fate-2.phys.uvic.ca
+f=titan.phys.uvic.ca
 
 ### MARKER-END-PORTABLE
