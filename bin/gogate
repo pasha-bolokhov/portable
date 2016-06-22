@@ -1,0 +1,7 @@
+#
+user=bolokhov
+host=gateway.phys.washington.edu
+options=
+
+slogin ${options} ${user}@${host}
+
