@@ -1,0 +1,7 @@
+#
+user=bolokhov
+host=104.196.231.165
+options=
+
+slogin ${options} ${user}@${host}
+
