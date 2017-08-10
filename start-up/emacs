@@ -1,0 +1,6 @@
+; force TAB key to only insert a TAB character
+(global-set-key (kbd "TAB") 'self-insert-command)
+
+; disable electric identation mode
+(electric-indent-mode -1)
+

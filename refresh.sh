@@ -61,3 +61,6 @@ cp -a ./start-up/screenrc ~/.screenrc
 # Configuration file for tmux
 cp -a ./start-up/tmux.conf ~/.tmux.conf
 
+# Configuration for emacs
+cp -a ./start-up/emacs ~/.emacs
+
