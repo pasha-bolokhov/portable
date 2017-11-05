@@ -44,15 +44,21 @@ fi
 
 # Copy start-up files
 cp -a ./start-up/bash_aliases ~/.bash_aliases
-if ! grep -q '^### MARKER-BEGIN-PORTABLE' ~/.bashrc || ! grep -q '^### MARKER-END-PORTABLE' ~/.bashrc; then
-    echo "Update ~/.bashrc with start-up/bashrc-user if needed manually" 1>&2
-else
-    ed -s ~/.bashrc <<-EOF
-	/^### MARKER-BEGIN-PORTABLE/,/^### MARKER-END-PORTABLE/ d
-	.-1 r start-up/bashrc-user
-	w
-	Q
-	EOF
+updated_profile="no"
+for PROFILE in ~/.bash_profile ~/.bash_login ~/.profile ~/.bashrc; do
+	if ! grep -q -s '^### MARKER-BEGIN-PORTABLE' ${PROFILE} || ! grep -q -s '^### MARKER-END-PORTABLE' $PROFILE; then
+		continue
+	fi
+	ed -s $PROFILE <<-EOF
+		/^### MARKER-BEGIN-PORTABLE/,/^### MARKER-END-PORTABLE/ d
+		.-1 r start-up/bashrc-user
+		w
+		Q
+		EOF
+    	updated_profile="yes"
+done
+if [ $updated_profile != "yes" ]; then
+	echo "Update ~/.profile or ~/.bashrc with start-up/bashrc-user if needed manually" 1>&2
 fi
 
 # Configuration file for GNU screen
