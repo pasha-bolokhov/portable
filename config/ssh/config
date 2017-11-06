@@ -1,0 +1,12 @@
+# github access
+Host github.com
+	Hostname	github.com
+	User		git
+	IdentityFile	~/.ssh/id_rsa
+
+# github-cs access
+Host github.com-cs
+	Hostname	github.com
+	User		git
+	IdentityFile	~/.ssh/id_rsa-cs
+
