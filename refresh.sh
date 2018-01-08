@@ -26,7 +26,7 @@ cp -a bin/* ~/bin/
 cp -a ./config/ssh/config ~/.ssh/
 
 # Copy the Authorized Keys
-cp -a ./config/ssh/authorized_keys ~/.ssh/
+install -m 600 -D --target-directory ~/.ssh ./config/ssh/authorized_keys
 
 # On Cygwin - change the group of the copied SSH files
 UNAME=$(uname -s)
