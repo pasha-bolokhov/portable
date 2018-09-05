@@ -23,7 +23,7 @@ cp -a bin/* ~/bin/
 #
 
 # Copy the SSH configuration
-cp -a ./config/ssh/config ~/.ssh/
+install -m 600 -D --target-directory ~/.ssh ./config/ssh/config
 
 # Copy the Authorized Keys
 install -m 600 -D --target-directory ~/.ssh ./config/ssh/authorized_keys
