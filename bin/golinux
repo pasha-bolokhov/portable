@@ -1,6 +1,6 @@
 #
-user=bolokhov
-host=104.196.231.165
+user=pasha_bolokhov_gmail_com
+host=35.233.148.44
 options=
 
 slogin ${options} ${user}@${host}
