@@ -1,0 +1,7 @@
+#
+user=gss_user
+host=162.243.146.117
+options=
+
+slogin ${options} ${user}@${host}
+
