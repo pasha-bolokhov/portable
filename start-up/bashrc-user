@@ -5,10 +5,29 @@
 ##
 ##
 # User specific environment and startup programs
+__get_git_branch__() {
+	git branch 2>/dev/null | grep '*' | colrm 1 2
+}
+
+__set_git_branch_color__() {
+	git status >/dev/null 2>&1 || return
+	branch=$(__get_git_branch__)
+	if [ "x$branch" = "xmaster" ]; then
+		echo -ne "\x1b[1m\x1b[38;5;87m"
+	else
+		echo -ne "\x1b[31m"
+	fi
+}
+
+__cancel_git_branch_color__() {
+	git status >/dev/null 2>&1 || return
+	echo -ne "\x1b[35m "
+}
+
 if [ "x`whoami`" = xroot ]; then
-    PS1='\[\e[1m\e[31m\]<\h \w>#\[\e[0m\] '
+	PS1='\[\e[1m\e[31m\]<\h \w>#\[\e[0m\] '
 else
-    PS1='\[\e[1m\e[35m\]<\h \w>\[\e[0m\] '
+	PS1=$'\[\e[1m\e[35m\]<\h \[$(__set_git_branch_color__)\]$(__get_git_branch__)\[$(__cancel_git_branch_color__)\]\w>\[\e[0m\] '
 fi
 
 f=titan.phys.uvic.ca
