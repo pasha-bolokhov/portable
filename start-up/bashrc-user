@@ -30,7 +30,7 @@ else
 	PS1=$'\[\e[1m\e[35m\]<\h \[$(__set_git_branch_color__)\]$(__get_git_branch__)\[$(__cancel_git_branch_color__)\]\w>\[\e[0m\] '
 fi
 
-f=titan.phys.uvic.ca
+f=fate.phys.uvic.ca
 g=35.233.148.44
 a=18.221.173.220
 gss=162.243.146.117
