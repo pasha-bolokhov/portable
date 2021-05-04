@@ -1,9 +1,5 @@
 #
-host=fate-2.phys.uvic.ca
-
-if [ $# -eq 1 ]; then
-  host=fate-${1}.phys.uvic.ca
-fi
+host=fate.phys.uvic.ca
 
 slogin -p 2200 -X bolokhov@${host}
 
